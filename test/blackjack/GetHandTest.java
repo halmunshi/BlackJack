@@ -1,6 +1,5 @@
 package blackjack;
 
-
 import blackjack.Card;
 import blackjack.Participant;
 import blackjack.Rank;
