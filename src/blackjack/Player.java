@@ -1,8 +1,7 @@
 package blackjack;
 
 /**
- *
- * @author hasanbasil
+ * @author Hasan Al-Munshi
  */
 public class Player extends Participant {
     private double balance;

@@ -1,7 +1,10 @@
 package blackjack;
 
 import java.util.*;
-
+/**
+ * @author Hasan Al-Munshi and Manchanda Praba
+ * The Game class includes the main method and all other game logic.
+ */
 public class Game {
     private Player player;
     private Dealer dealer;

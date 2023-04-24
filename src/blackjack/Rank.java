@@ -1,8 +1,10 @@
 package blackjack;
 
 /**
- *
- * @author hasanbasil
+ * 
+ * @author Hasan Al-Munshi
+ * The Rank enum represents the possible ranks of a playing card.
+ * Each rank has a corresponding value used for calculating the hand value.
  */
 public enum Rank {
     ACE(11),
@@ -21,10 +23,12 @@ public enum Rank {
 
     private final int value;
 
+    // Constructor for each rank that sets its corresponding value
     Rank(int value) {
         this.value = value;
     }
 
+    // Returns the value of the rank
     public int getValue() {
         return value;
     }
