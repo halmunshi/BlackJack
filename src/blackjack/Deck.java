@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * @author Hasan Al-Munshi and Praba Manchanda
  * The Deck class represents a deck of cards used in the Blackjack game.
  */
 public class Deck {

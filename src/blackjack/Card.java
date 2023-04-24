@@ -4,7 +4,7 @@ package blackjack;
  * This class represents a playing card in a deck of cards.
  * It contains information about the card's suit and rank, as well as methods for getting the card's value and a string representation.
  * 
- * @author Hasan Al-munshi
+ * @author Hasan Al-Munshi and Praba Manchanda
  */
 public class Card {
     private final Suit suit;

@@ -6,6 +6,8 @@ import java.util.List;
 /**
  * The Participant class represents a participant in the Blackjack game,
  * which can be either a player or a dealer.
+ * 
+ * @author Hasan Al-Munshi and Praba Manchanda
  */
 public abstract class Participant {
     protected List<Card> hand;

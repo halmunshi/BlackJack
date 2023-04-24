@@ -2,7 +2,7 @@ package blackjack;
 
 /**
  * 
- * @author Hasan Al-Munshi
+ * @author Hasan Al-Munshi and Praba Manchanda
  * The Rank enum represents the possible ranks of a playing card.
  * Each rank has a corresponding value used for calculating the hand value.
  */

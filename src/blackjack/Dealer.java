@@ -1,7 +1,7 @@
 package blackjack;
 
 /**
- * @author Hasan Al-Munshi
+ * @author Hasan Al-Munshi and Praba Manchanda
  * The Dealer class represents a dealer in the game of Blackjack. It extends the Participant abstract class,
  * which provides common methods and properties that are used by both the Dealer and Player classes.
  */
