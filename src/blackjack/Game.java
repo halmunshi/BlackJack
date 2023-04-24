@@ -69,24 +69,24 @@ public class Game {
 
     // Determines the winner of the round and updates the player's balance accordingly
     public void declareWinner() {
-    int playerHandValue = player.calculateHandValue();
-    int dealerHandValue = dealer.calculateHandValue();
+        int playerHandValue = player.calculateHandValue();
+        int dealerHandValue = dealer.calculateHandValue();
 
-    if (playerHandValue > 21) {
-        System.out.println("Player busts! Dealer wins.");
-    } else if (dealerHandValue > 21) {
-        System.out.println("Dealer busts! Player wins.");
-        player.updateBalance(player.getBetAmount() * 1.5); // Player wins 1.5 times their bet amount
-    } else if (playerHandValue > dealerHandValue) {
-        System.out.println("Player wins!");
-        player.updateBalance(player.getBetAmount() * 1.5);
-    } else if (playerHandValue < dealerHandValue) {
-        System.out.println("Dealer wins!");
-    } else {
-        System.out.println("It's a tie!");
-        player.updateBalance(0); // Player gets their bet amount back in case of a tie
+        if (playerHandValue > 21) {
+            System.out.println("Player busts! Dealer wins.");
+        } else if (dealerHandValue > 21) {
+            System.out.println("Dealer busts! Player wins.");
+            player.updateBalance(player.getBetAmount() * 1.5); // Player wins 1.5 times their bet amount
+        } else if (playerHandValue > dealerHandValue) {
+            System.out.println("Player wins!");
+            player.updateBalance(player.getBetAmount() * 1.5);
+        } else if (playerHandValue < dealerHandValue) {
+            System.out.println("Dealer wins!");
+        } else {
+            System.out.println("It's a tie!");
+            player.updateBalance(0); // Player gets their bet amount back in case of a tie
+        }
     }
-}
     // Returns the player object
     public Player getPlayer() {
         return player;
