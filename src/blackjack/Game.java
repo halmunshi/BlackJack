@@ -46,14 +46,15 @@ public class Game {
     declareWinner();
 }
 
-
+    // Starts a new round of the game by creating a new deck, shuffling it, and dealing cards to the player and dealer
     public void startNewGame() {
         deck = new Deck(); // Create a new deck for every round
-        deck.shuffle();
+        deck.shuffle(); // Shuffle the deck
 
-        player.clearHand();
-        dealer.clearHand();
+        player.clearHand(); // Clear the player's hand
+        dealer.clearHand(); // Cleat the dealer's hand
 
+        // Deal twwo cards to the player and two cards to the dealer
         Card playerCard1 = deck.dealCard();
         Card playerCard2 = deck.dealCard();
         player.addCardToHand(playerCard1);
@@ -62,7 +63,7 @@ public class Game {
         Card dealerCard1 = deck.dealCard();
         Card dealerCard2 = deck.dealCard();
         dealer.addCardToHand(dealerCard1);
-        dealer.setHiddenCard(dealerCard2);
+        dealer.setHiddenCard(dealerCard2); // Set one of the dealer's cards as hidden
     }
 
     public void declareWinner() {
