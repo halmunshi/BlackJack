@@ -87,22 +87,24 @@ public class Game {
         player.updateBalance(0); // Player gets their bet amount back in case of a tie
     }
 }
-
-
+    // Returns the player object
     public Player getPlayer() {
         return player;
     }
 
+    // Returns the deck object
     public Deck getDeck() {
         return deck;
     }
 
+    // Returns the dealer object
     public Dealer getDealer() {
         return dealer;
     }
 
+    // The main method of the game
     public static void main(String[] args) {
-        Game game = new Game();
+        Game game = new Game(); // Create a new game object
         Scanner scanner = new Scanner(System.in);
         String input;
 
@@ -120,26 +122,23 @@ public class Game {
                 betAmount = scanner.nextDouble();
             }
 
-            game.getPlayer().placeBet(betAmount);
+            game.getPlayer().placeBet(betAmount); // Player places their bet
 
-            game.playRound(scanner);
+            game.playRound(scanner); // Play a round of the game
 
             System.out.print("Do you want to play another round? (y/n): ");
             input = scanner.next();
         } while (input.equalsIgnoreCase("y"));
 
         System.out.println("Thank you for playing!");
-        scanner.close();
+        scanner.close(); // Close the scanner object
     }
 
-
-
+    // No longer needed, as we update the player's balance directly in the declareWinner() method
     public void updateBalance() {
-        // This method is no longer needed, as we update the player's balance directly in the declareWinner() method.
     }
 
+    // No longer needed, as we handle the Ace value calculation within the calculateHandValue() method in the Participant class
     public void handleAces() {
-        // This method is no longer needed, as we handle the Ace value calculation within the calculateHandValue() method in the Participant class.
     }
 }
-
