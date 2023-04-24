@@ -66,6 +66,7 @@ public class Game {
         dealer.setHiddenCard(dealerCard2); // Set one of the dealer's cards as hidden
     }
 
+    // Determines the winner of the round and updates the player's balance accordingly
     public void declareWinner() {
     int playerHandValue = player.calculateHandValue();
     int dealerHandValue = dealer.calculateHandValue();
@@ -74,7 +75,7 @@ public class Game {
         System.out.println("Player busts! Dealer wins.");
     } else if (dealerHandValue > 21) {
         System.out.println("Dealer busts! Player wins.");
-        player.updateBalance(player.getBetAmount() * 1.5);
+        player.updateBalance(player.getBetAmount() * 1.5); // Player wins 1.5 times their bet amount
     } else if (playerHandValue > dealerHandValue) {
         System.out.println("Player wins!");
         player.updateBalance(player.getBetAmount() * 1.5);
@@ -82,7 +83,7 @@ public class Game {
         System.out.println("Dealer wins!");
     } else {
         System.out.println("It's a tie!");
-        player.updateBalance(0);
+        player.updateBalance(0); // Player gets their bet amount back in case of a tie
     }
 }
 
