@@ -8,43 +8,44 @@ public class Game {
     private Deck deck;
 
     public Game() {
-        player = new Player(100);
-        dealer = new Dealer();
-        deck = new Deck();
+        player = new Player(100); // Create a new player with an initial balance of 100
+        dealer = new Dealer(); // Create a new dealer
+        deck = new Deck(); // Create a new deck of cards
     }
 
+    // Starts a new round of the game
     public void playRound(Scanner scanner) {
-    startNewGame();
+        startNewGame(); // Start a new round of the game
 
-    String input;
-    boolean playerBusted = false;
-    while (true) {
-        System.out.println("Your hand: " + player.getHand());
-        System.out.printf("Your hand value: %d%n", player.calculateHandValue());
-        System.out.print("Do you want to hit or stand? (h/s): ");
-        input = scanner.next();
+        String input;
+        boolean playerBusted = false;
+        while (true) {
+            System.out.println("Your hand: " + player.getHand());
+            System.out.printf("Your hand value: %d%n", player.calculateHandValue());
+            System.out.print("Do you want to hit or stand? (h/s): ");
+            input = scanner.next();
 
-        if (input.equalsIgnoreCase("h")) {
-            player.hit(deck);
-            if (player.calculateHandValue() > 21) {
-                playerBusted = true;
-                System.out.println("Your hand: " + player.getHand());
-                System.out.printf("Your hand value: %d%n", player.calculateHandValue());
-                break;
+            if (input.equalsIgnoreCase("h")) {
+                player.hit(deck); // Player takes another card from the deck
+                if (player.calculateHandValue() > 21) {
+                    playerBusted = true; // Player has busted
+                    System.out.println("Your hand: " + player.getHand());
+                    System.out.printf("Your hand value: %d%n", player.calculateHandValue());
+                    break;
+                }
+            } else {
+                break; // Player chooses to stand
             }
-        } else {
-            break;
         }
-    }
 
-    dealer.revealHiddenCard();
-    if (!playerBusted) {
-        dealer.playTurn(deck);
+        dealer.revealHiddenCard(); // Reveal the dealer's hidden card
+        if (!playerBusted) {
+            dealer.playTurn(deck); // Dealer plays their turn according to the rules of Blackjack
+        }
+        System.out.println("Dealer's hand: " + dealer.getHand());
+        System.out.println("Dealer's hand value: " + dealer.calculateHandValue());
+        declareWinner(); // Determine the winner of the round
     }
-    System.out.println("Dealer's hand: " + dealer.getHand());
-    System.out.println("Dealer's hand value: " + dealer.calculateHandValue());
-    declareWinner();
-}
 
     // Starts a new round of the game by creating a new deck, shuffling it, and dealing cards to the player and dealer
     public void startNewGame() {
